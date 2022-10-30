@@ -13,6 +13,7 @@
         <!-- partial -->
         @include('admin.body')
     <!-- container-scroller -->
+    <!-- container-scroller -->
     <!-- plugins:js -->
     @include('admin.script')
     <!-- End custom js for this page -->
