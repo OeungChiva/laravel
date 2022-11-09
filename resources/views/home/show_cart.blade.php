@@ -36,6 +36,7 @@
          {
             font-size: 30px;
             padding: 5px;
+            background: skyblue;
          }
          .img_deg 
          {
@@ -54,15 +55,13 @@
          <!-- header section strats -->
          @include('home.header')
          <!-- end header section -->
-      
-      </div>
 
-      <div class="center">
+         <div class="center">
         <table>
             <tr>
                <th class="th_deg">Product Title</th>
-               <th class="th_deg">Product Quantity</th>
-               <th class="th_deg">Price</th>
+               <th class="th_deg">Quantity</th>
+               <th class="th_deg">Product Price</th>
                <th class="th_deg">Image</th>
                <th class="th_deg">Action</th>
             </tr>
@@ -91,8 +90,12 @@
 
       </div>
      
+      
+      </div>
+
+      
       <!-- footer start -->
-      @include('home.footer')
+      
       <!-- footer end -->
       <div class="cpy_">
          <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
