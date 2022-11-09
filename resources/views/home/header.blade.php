@@ -26,32 +26,9 @@
                         <li class="nav-item">
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
-                        <form class="form-inline">
-                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                           <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
-                        @if (Route::has('login'))
 
-                        @auth
-                        
-                        <x-app-layout>
-
-                        </x-app-layout>
-
-                        @else
-                         <li class="nav-item">
-                           <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">Login</a>
-                        </li> 
                         <li class="nav-item">
-                           <a class="btn btn-success" href="{{ route('register') }}">Register</a>
-                        </li>
-
-                        @endauth
-                        
-                        @endif
-                        <!-- <li class="nav-item">
-                           <a class="nav-link" href="#">
+                           <a class="nav-link" href="{{url('show_cart')}}">
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                  <g>
                                     <g>
@@ -105,7 +82,32 @@
                                  </g>
                               </svg>
                            </a>
-                        </li> -->
+                        </li>
+                        <form class="form-inline">
+                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                           <i class="fa fa-search" aria-hidden="true"></i>
+                           </button>
+                        </form>
+                        @if (Route::has('login'))
+
+                        @auth
+                        
+                        <x-app-layout>
+
+                        </x-app-layout>
+
+                        @else
+                         <li class="nav-item">
+                           <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">Login</a>
+                        </li> 
+                        <li class="nav-item">
+                           <a class="btn btn-success" href="{{ route('register') }}">Register</a>
+                        </li>
+
+                        @endauth
+                        
+                        @endif
+                        
                       
                      </ul>
                   </div>
