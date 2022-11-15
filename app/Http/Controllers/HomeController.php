@@ -19,7 +19,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $product = Product::paginate(4);
+        $product = Product::paginate(6);
         return view('home.userpage', compact('product'));
     }
     public function redirect()

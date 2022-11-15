@@ -80,8 +80,8 @@
                     <td class="td_deg">{{$product->description}}</td>
                     <td class="td_deg">{{$product->quantity}}</td>
                     <td class="td_deg">{{$product->category}}</td>
-                    <td class="td_deg">{{$product->price}}</td>
-                    <td class="td_deg">{{$product->discount_price}}</td>
+                    <td class="td_deg">{{$product->price}}$</td>
+                    <td class="td_deg">{{$product->discount_price}}$</td>
                     <td class="td_deg">
                         <img class="img_size" src="/product/{{$product->image}}" alt="">
                     </td>
