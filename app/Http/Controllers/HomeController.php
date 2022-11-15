@@ -8,6 +8,9 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Comment;
+use App\Models\Reply;
+
 use Session;
 use Stripe;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -212,6 +215,16 @@ class HomeController extends Controller
         $order->delivery_status='Canceled';
         $order->save();
         return redirect()->back();
+    }
+    public function product_search(Request $request)
+    {
+        // $comment = comment::orderby('id','desc')->get();
+        // $reply = reply::all();
+        $search_text = $request->search;
+        $product = product::where('title','LIKE',"%$search_text%")->orWhere('category','LIKE',"$search_text")->paginate(10);
+        // return view('home.userpage',compact('product','comment','reply'));
+        return view('home.userpage',compact('product'));
+
     }
 
 

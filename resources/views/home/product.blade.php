@@ -2,8 +2,18 @@
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  Our <span>products</span>
+                  Our <span>Products</span>
                </h2>
+            </div>
+            <br><br>
+            <div style="padding-left:300px; padding-right:300px;">
+               <form  style="" action="{{url('product_search')}}" method="GET">
+                  @csrf
+                  <input style=" " type="text" name="search" placeholder="Search for something...">
+                  <input type="submit" value="search">
+
+               </form>
+
             </div>
             <div class="row">
 
