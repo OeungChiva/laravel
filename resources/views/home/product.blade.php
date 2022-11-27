@@ -5,7 +5,7 @@
                   Our <span>Products</span>
                </h2>
             </div>
-            <br><br>
+            <br>
             <div style="padding-left:300px; padding-right:300px;">
                <form  style="" action="{{url('product_search')}}" method="GET">
                   @csrf
@@ -15,7 +15,16 @@
                </form>
 
             </div>
+
+            @if(session()->has('message'))
+            <div class="alert alert-success">  
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+              {{session()->get('message')}}
+            </div>
+            @endif
+            
             <div class="row">
+               
 
                @foreach ($product as $products)
 
@@ -70,11 +79,14 @@
                   </div>
                </div>
                @endforeach
+            
+               
                <span style="padding-top: 20px;">
 
                {!!$product->withQueryString()->links('pagination::bootstrap-5')!!}
 
                </span>
+               
                
          </div>
       </section>

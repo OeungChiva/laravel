@@ -12,7 +12,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>Shop</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
       <!-- font awesome style -->
@@ -33,7 +33,7 @@
                   <div class="box">
                      
                      <div class="img-box" style=" padding : 20px">
-                        <img src="product/{{$product->image}}" alt="">
+                        <img width="400px" height="400px" src="product/{{$product->image}}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>

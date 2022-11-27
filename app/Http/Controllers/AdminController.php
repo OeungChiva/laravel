@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
@@ -12,8 +12,18 @@ class AdminController extends Controller
 {
     public function view_category()
     {
-        $data = category::all();
-        return view('admin.category',compact('data'));
+        if(Auth::id())
+        {
+            $data = category::all();
+            return view('admin.category',compact('data'));
+
+        }
+        else
+        {
+            return redirect('login');
+
+        }
+       
     } 
 
     public function add_category(Request $request)

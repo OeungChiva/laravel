@@ -42,7 +42,7 @@ class HomeController extends Controller
             return view('admin.home',compact('total_product','total_order','total_user','total_revenue','total_delivered','total_processing'));
         }
         else{
-            $product = Product::paginate(4);
+            $product = Product::paginate(6);
             return view('home.userpage', compact('product'));
         }
     }
@@ -58,7 +58,29 @@ class HomeController extends Controller
         {
             
             $user = Auth::user();
+            $userid = $user->id;
             $product = product::find($id);
+            $product_exist_id = cart::where('product_id','=',$id)->where('user_id','=',$userid)->get('id')->first();
+            if( $product_exist_id )
+            {
+                $cart = cart::find($product_exist_id)->first();
+                $quantity = $cart -> quantity;
+                $cart -> quantity = $quantity + $request -> quantity;
+                if($product -> discount_price != null)
+                {
+                    $cart -> price= $product -> discount_price *  $cart -> quantity;
+                }
+                else
+                {
+                    $cart -> price= $product -> price * $cart -> quantity;
+                }
+                $cart->save();
+                return redirect()->back()->with('message','Product Added to Cart Successfully');
+
+            }
+            else
+            {
+
             $cart = new cart;
             $cart -> name = $user -> name;
             $cart -> email = $user -> email;
@@ -82,7 +104,8 @@ class HomeController extends Controller
             $cart -> quantity = $request -> quantity;
 
             $cart->save();
-            return redirect()->back();
+            return redirect()->back()->with('message','Product Added to Cart Successfully');
+        }
         }
         else
         {
@@ -221,9 +244,28 @@ class HomeController extends Controller
         // $comment = comment::orderby('id','desc')->get();
         // $reply = reply::all();
         $search_text = $request->search;
-        $product = product::where('title','LIKE',"%$search_text%")->orWhere('category','LIKE',"$search_text")->paginate(10);
+        $product = product::where('title','LIKE',"%$search_text%")->orWhere('category','LIKE',"$search_text")->paginate(6);
         // return view('home.userpage',compact('product','comment','reply'));
         return view('home.userpage',compact('product'));
+
+    }
+
+    public function product()
+    {
+        $product = Product::paginate(6);
+         // $comment = comment::orderby('id','desc')->get();
+        // $reply = reply::all();
+        return view('home.all_product', compact('product'));
+    }
+
+    public function search_product(Request $request)
+    {
+        // $comment = comment::orderby('id','desc')->get();
+        // $reply = reply::all();
+        $search_text = $request->search;
+        $product = product::where('title','LIKE',"%$search_text%")->orWhere('category','LIKE',"$search_text")->paginate(6);
+        // return view('home.userpage',compact('product','comment','reply'));
+        return view('home.all_product',compact('product'));
 
     }
 
