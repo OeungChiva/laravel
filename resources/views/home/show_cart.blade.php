@@ -10,7 +10,7 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="images/favicon.png" type="">
+      <link rel="shortcut icon" href="images/images.png" type="">
       <title>Shop</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
@@ -34,7 +34,7 @@
          }
          .th_deg 
          {
-            font-size: 30px;
+            font-size: 20px;
             padding: 5px;
             background: skyblue;
          }
@@ -47,6 +47,7 @@
          {
             font-size: 20px;
             padding: 40px;
+            font-weight: bold;
          }
       </style>
    </head>
@@ -95,8 +96,8 @@
 
         <div>
          <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed to Order</h1>
-         <a href="{{url('cash_order')}}"class="btn btn-danger">Cash On Delivery</a>
-         <a href="{{url('stripe',$totalprice)}}"class="btn btn-danger">Pay Using Card</a>
+         <a href="{{url('cash_order')}}"class="btn btn-success">Cash On Delivery</a>
+         <a href="{{url('stripe',$totalprice)}}"class="btn btn-success">Pay Using Card</a>
 
         </div>
 

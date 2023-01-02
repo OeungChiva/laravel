@@ -34,6 +34,8 @@ Route::get('/show_product',[AdminController::class,'show_product']);
 Route::get('/delete_product/{id}',[AdminController::class,'delete_product']);
 Route::get('/update_product/{id}',[AdminController::class,'update_product']);
 Route::post('/update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
+// Route::get('/update_category/{id}',[AdminController::class,'update_category']);
+// Route::post('/update_category_confirm/{id}',[AdminController::class,'update_category_confirm']);
 Route::get('/order',[AdminController::class,'order']);
 Route::get('/delivered/{id}',[AdminController::class,'delivered']);
 Route::get('/search',[AdminController::class,'searchdata']);
@@ -50,4 +52,3 @@ Route::get('/cancel_order/{id}',[HomeController::class,'cancel_order']);
 Route::get('/product_search',[HomeController::class,'product_search']);
 Route::get('/products',[HomeController::class,'product']);
 Route::get('/search_product',[HomeController::class,'search_product']);
-

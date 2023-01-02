@@ -18,7 +18,6 @@
             </div>
             @endif
        <div class="row">
-
           @foreach ($product as $products)
 
           <div class="col-sm-6 col-md-4 col-lg-4">

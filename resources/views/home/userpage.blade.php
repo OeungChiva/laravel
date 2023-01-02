@@ -10,7 +10,7 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="images/favicon.png" type="">
+      <link rel="shortcut icon" href="images/images.png" type="">
       <title>Shop</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
@@ -43,10 +43,10 @@
       <!-- end product section -->
 
       <!-- subscribe section -->
-      @include('home.subscribe')
+      {{-- @include('home.subscribe')
       <!-- end subscribe section -->
       <!-- client section -->
-      @include('home.client')
+      @include('home.client') --}}
       <!-- end client section -->
       <!-- footer start -->
       @include('home.footer')

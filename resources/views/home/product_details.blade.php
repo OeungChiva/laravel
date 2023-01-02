@@ -11,7 +11,7 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="images/favicon.png" type="">
+      <link rel="shortcut icon" href="images/images.png" type="">
       <title>Shop</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
@@ -27,7 +27,7 @@
          <!-- header section strats -->
          @include('home.header')
          <!-- end header section -->
-    
+   
     
     <div class="col-sm-6 col-md-4 col-lg-4" style="margin:auto; width:50%; padding:30px">
                   <div class="box">
@@ -69,6 +69,7 @@
                                  <input type="number" name="quantity" value="1" min="1" style="width: 100px">
                                  </div>
                                  <div class="col-md-4">
+                                 {{-- <a href="{{url('show_card')}}"class="btn btn-success">Add to Cart</a> --}}
                                  <input type="submit" value="Add to Cart">
                                  </div>
                               </div>

@@ -39,6 +39,7 @@ class AdminController extends Controller
       $data -> delete();
       return redirect()->back()->with('message','Category Deleted Successfully');
     }
+    
     public function view_product()
     {
         $category = category::all();
@@ -49,7 +50,7 @@ class AdminController extends Controller
     {
         $product = new product;
         $product->title=$request->title;
-        $product->description=$request->description;
+        $product->description=strtolower($request->description);
         $product->price=$request->price;
         $product->quantity=$request->quantity;
         $product->discount_price=$request->dis_price;

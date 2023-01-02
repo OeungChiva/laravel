@@ -23,7 +23,16 @@
         width: 50%;
         text-align: center;
         margin-top: 30px;
-        border: 3px solid white;
+        border: 2px solid white;
+       }
+       .th_deg
+       {
+        padding: 30px;
+        border: 1px solid white;
+        background-color: skyblue;
+       }
+       .td_deg{
+        border: 1px solid white;
        }
     </style>
   </head>
@@ -55,15 +64,16 @@
 
             <table class="center">
               <tr>
-                <td>Category Name</td>
-                <td>Action</td>
+                <td class="th_deg">Category Name</td>
+                <td colspan="2" class="th_deg">Action</td>
               </tr>
               @foreach($data as $data)
-              <tr>
-               <td>{{$data->category_name}}</td>
-               <td>
+              <tr >
+               <td class="td_deg">{{$data->category_name}}</td>
+               <td class="td_deg">
                 <a onclick="return confirm('Are You Sure To Delete This')" class="btn btn-danger" href="{{url('delete_category', $data->id)}}">Delete</a>
                </td>
+               
               </tr>
               @endforeach
             </table>
